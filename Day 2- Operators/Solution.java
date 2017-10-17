@@ -9,14 +9,15 @@ Note: Be sure to use precise values for your calculations, or you may end up wit
 
 Input Format
 
-There are 33 lines of numeric input:
+There are 3 lines of numeric input:
 The first line has a double, mealCost (the cost of the meal before tax and tip).
 The second line has an integer, tipPercent (the percentage of mealCost being added as tip).
 The third line has an integer, taxPercent (the percentage of mealCost being added as tax).
 
 Output Format
 
-Print The total meal cost is totalCost dollars.The total meal cost is totalCost dollars., where totalCost is the rounded integer result of the entire bill (mealCost with added tax and tip).
+Print The total meal cost is totalCost dollars.The total meal cost is totalCost dollars., 
+where totalCost is the rounded integer result of the entire bill (mealCost with added tax and tip).
 
 Sample Input
 
@@ -34,10 +35,10 @@ Given:
 mealCost=12, tipPercent=20, taxPercent=8
 
 Calculations:
-tip=12×20100=2.4
-tax=12×8100=0.96
-totalCost=mealCost+tip+tax=12+2.4+0.96=15.36
-round(totalCost)=15
+tip = 12 × 20/100 = 2.4
+tax = 12 × 8/100 = 0.96
+totalCost = mealCost + tip + tax = 12 + 2.4 + 0.96 = 15.36
+round(totalCost) = 15
 
 We round totalCost to the nearest dollar (integer) and then print our result:
 
@@ -63,13 +64,8 @@ public class Arithmetic {
         scan.close();
       
         // Write your calculation code here.
-        
-        double tip = mealCost * ((double)tipPercent / 100);
-        double tax = mealCost * ((double)taxPercent / 100);
-        double total = mealCost + tip + tax;
-      
         // cast the result of the rounding operation to an int and save it as totalCost 
-        int totalCost = (int) Math.round(/*numberToRoundHere*/total);
+        int totalCost = (int) Math.round(mealCost + mealCost * tipPercent / 100.0 + mealCost * taxPercent / 100.0);
       
         // Print your result
         System.out.println("The total meal cost is " + totalCost + " dollars.");
