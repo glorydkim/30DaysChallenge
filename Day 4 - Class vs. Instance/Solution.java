@@ -78,16 +78,31 @@ public class Person {
   
 	public Person(int initialAge) {
   		// Add some more code to run some checks on initialAge
+        	if(initialAge < 0){
+            		System.out.println("Age is not valid, setting age to 0.");
+        	} else{
+            		age = initialAge;
+        	}
 	}
 
 	public void amIOld() {
   		// Write code determining if this person's age is old and print the correct statement:
-        System.out.println(/*Insert correct print statement here*/);
+        	String response = "";
+        	if(age < 13){
+            		response = "You are young.";
+        	} else if (age >= 13 && age < 18){
+            		response = "You are a teenager.";
+        	} else {
+            		response = "You are old.";
+        	}
+        		System.out.println(response);
 	}
 
 	public void yearPasses() {
   		// Increment this person's age.
+        	age += 1;
 	}
+
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
