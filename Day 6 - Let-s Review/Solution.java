@@ -63,6 +63,24 @@ import java.util.*;
 public class Solution {
 
     public static void main(String[] args) {
-        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+      /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+      Scanner in = new Scanner(System.in);
+      int T = in.nextInt();
+      String string[] = new String[T];
+      for(int i = 0; i<T; i++){
+        string[i] = in.next();
+      }
+      for(int temp = 0; temp<T; temp++){
+        for(int j = 0; j<string[temp].length(); j = j+2) {
+          System.out.print(string[temp].charAt(j));
+        }
+        System.out.print(" ");
+        
+        for(int j = 1; j<string[temp].length(); j = j+2){
+          System.out.print(string[temp].charAt(j));
+        }
+        System.out.println();
+      }
+      in.close();
     }
 }
