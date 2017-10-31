@@ -75,12 +75,18 @@ class Solution{
       String name = in.next();
       int phone = in.nextInt();
       // Write code here
+      phoneList.put(name, phone); 
       
       }
     while(in.hasNext()){
-        String s = in.next();
-        // Write code here
-        
+      String s = in.next();
+      // Write code here
+      if(phoneList.containsKey(s)){
+        System.out.printf("%s=%d\n", s, phoneList.get(s).intValue());
+      } 
+      else {
+        System.out.println("Not found");
+      }
     }
     in.close();
     }
